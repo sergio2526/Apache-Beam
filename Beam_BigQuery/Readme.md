@@ -4,7 +4,7 @@
 
 ### Table BigQuery:
 
-![Untitled](Untitled%206d2fdc2b197640cda2d1f931467b6e95/Untitled.png)
+[<img alt="BigQuery" src="https://res.cloudinary.com/xaiop/image/upload/v1670442434/Untitled_qedshu.png"/>]
 
 - **Input**:
 
