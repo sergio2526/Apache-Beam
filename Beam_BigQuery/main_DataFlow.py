@@ -37,7 +37,6 @@ def run_pipeline(custom_args, beam_args):
         query_results = pipeline | "Input query" >> beam.io.ReadFromBigQuery(query = query,
                                                                              use_standard_sql=True)
 
-        #query_results | "Write to BigQuery" >> beam.io.WriteToBigQuery("out/resultado_query.txt")
         query_results | "Write to Cloud Storage" >> beam.io.WriteToText(out_data, file_name_suffix=".txt")
 
 
