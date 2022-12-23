@@ -51,7 +51,8 @@ def run_pipeline(our_args, beam_args):
                 'staging_location':"gs://pruebas-dt-data-analytics/tmp/",
                 "temp_location": "gs://pruebas-dt-data-analytics/tmp/",
                 "region": "us-east1",
-                "experiments": ['shuffle_mode=service']} # <--- reduce resource usage,  only for batch jobs
+                "experiments": ['shuffle_mode=service'], # <--- reduce resource usage,  only for batch jobs
+                } 
 
     pipeline_options = beam.pipeline.PipelineOptions(beam_args,**options)
     
