@@ -1,2 +1,4 @@
 apache-beam[gcp]
 google-cloud-bigquery==3.4.0
+beam-mysql-connector==1.8.5
+google-cloud-secret-manager==2.6.0
