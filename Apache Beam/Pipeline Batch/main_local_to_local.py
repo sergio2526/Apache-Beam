@@ -22,12 +22,12 @@ def run_pipeline(custom_args, beam_args):
 
         #Read data
         input_results = (pipeline
-                        | "Import Data" >> beam.io.ReadFromText("./data/sample.csv", skip_header_lines=1)
+                        | "Import Data" >> beam.io.ReadFromText("../data/sample.csv", skip_header_lines=1)
                         | "Split by comma" >> beam.Map(lambda record: record.split(','))
                         | beam.Map(lambda record: int(record[2])*10) # seleccionar la columna posicion 2 y multiplicar por 10
                         )
 
-        input_results | "Write to Local" >> beam.io.WriteToText("./out/sample1", file_name_suffix=".txt")
+        input_results | "Write to Local" >> beam.io.WriteToText("../out/sample1", file_name_suffix=".txt")
 
 
 

@@ -5,7 +5,7 @@ from apache_beam import PCollection
 from apache_beam.options.pipeline_options import PipelineOptions
 
 #Service
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "./service-account.json"
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "../service-account.json"
 
 
 def main():
@@ -23,8 +23,8 @@ def run_pipeline(custom_args, beam_args):
     out_data = custom_args.out_data
 
 
-    options = {"project": "299263365694",
-              "runner": 'Direct',
+    options = {"project": "dt-data-analytics",
+              "runner": 'DataFlow',  # <------ Runtine
               "temp_location": "gs://pruebas-dt-data-analytics/tmp/",
               "region": "us-east1" }
 
@@ -37,7 +37,7 @@ def run_pipeline(custom_args, beam_args):
         query_results = pipeline | "Input query" >> beam.io.ReadFromBigQuery(query = query,
                                                                              use_standard_sql=True)
 
-        query_results | "Write to BigQuery" >> beam.io.WriteToText(out_data, file_name_suffix=".txt")
+        query_results | "Write to Cloud Storage" >> beam.io.WriteToText(out_data, file_name_suffix=".txt")
 
 
 

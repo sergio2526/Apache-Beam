@@ -35,7 +35,7 @@ def run_pipeline(custom_args, beam_args):
                         #| "Print Results" >> beam.Map(print)
                         )
 
-        input_results | "Write to Local" >> beam.io.WriteToText("./out/sample_mysql", file_name_suffix=".txt")
+        input_results | "Write to Local" >> beam.io.WriteToText("../out/sample_mysql", file_name_suffix=".txt")
 
 
 

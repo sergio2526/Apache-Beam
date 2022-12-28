@@ -10,7 +10,7 @@ from beam_mysql.connector.io import ReadFromMySQL
 
 
 #Credenciales y secret manager
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="./service-account.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="../service-account.json"
 
 SECRET_USER: Final = "user"
 SECRET_PASSWORD: Final = "password"
@@ -62,7 +62,7 @@ def run_pipeline(custom_args, beam_args):
                         | "Print Results" >> beam.Map(print)
                         )
 
-        #input_results | "Write to Local" >> beam.io.WriteToText("./out/sample_mysql_secret", file_name_suffix=".txt")
+        #input_results | "Write to Local" >> beam.io.WriteToText("../out/sample_mysql_secret", file_name_suffix=".txt")
 
 
 

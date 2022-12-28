@@ -10,7 +10,7 @@ from apache_beam.pvalue import PCollection
 from apache_beam.transforms import PTransform
 
 #Service
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "./service-account.json"
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "../service-account.json"
 
 table = "dt-data-analytics:test.sample"
 table_schema = "columna1:INTEGER, columna2:STRING, columna3:STRING"
