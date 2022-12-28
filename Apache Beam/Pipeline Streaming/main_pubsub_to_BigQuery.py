@@ -39,7 +39,7 @@ def run_pipeline():
                              | 'ParseJson' >> beam.Map(parse_json)
                              ) 
 
-        # Aplica una ventana de tiempo fijo de 1 minuto a cada elemento de la pipeline.
+        # Aplica una ventana de tiempo fijo de 5 segundos a cada elemento de la pipeline.
         (messages | 'Añade ventanas de tiempo' >> beam.WindowInto(FixedWindows(5))
                   | 'WriteAggToBQ' >> beam.io.WriteToBigQuery(
                     table,
