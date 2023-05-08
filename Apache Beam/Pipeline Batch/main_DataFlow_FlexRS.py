@@ -26,7 +26,7 @@ def run_pipeline(custom_args, beam_args):
                "runner": "DataflowRunner",
                "temp_location": "gs://pruebas-dt-data-analytics/tmp/",
                "region": "us-central1",
-               "flexrs_goal": "COST_OPTIMIZED" 
+               "flexrs_goal": "COST_OPTIMIZED" # Dataflow service chooses any available discounted resources.
               # "worker_region": "us-central1",
               # "max_num_workers": 100,
               # "autoscaling_algorithm": "THROUGHPUT_BASED"
